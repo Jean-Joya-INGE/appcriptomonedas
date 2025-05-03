@@ -3,38 +3,74 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
+    android:background="@drawable/crypto_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:hint="Email"
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/crypto_header"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"/>
+        android:text="@string/welcome_message"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_description"
+        android:textColor="#E0E0E0"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:hint="@string/email_hint"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:textColorHint="#78909C"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:layout_marginBottom="12dp"/>
 
     <EditText
         android:id="@+id/etPassword"
-        android:hint="Contraseña"
+        android:hint="@string/password_hint"
         android:inputType="textPassword"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:textColorHint="#78909C"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:padding="16dp"/>
-
-
+        android:drawablePadding="8dp"
+        android:layout_marginBottom="32dp"/>
 
     <Button
         android:id="@+id/btnLogin"
-        android:text="Iniciar Sesión"
+        android:text="@string/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"/>
+        android:background="@drawable/button_background"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnGoToRegister"
-        android:text="Registrarse"
+        android:text="@string/register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"/>
+        android:background="@drawable/button_background"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"/>
 </LinearLayout>

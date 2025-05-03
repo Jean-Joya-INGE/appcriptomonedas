@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -39,15 +40,23 @@ public class PortfolioAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_portfolio, parent, false);
+
+            holder = new ViewHolder();
+            holder.ivCryptoLogo = convertView.findViewById(R.id.ivCryptoLogo);
+            holder.tvCryptoName = convertView.findViewById(R.id.tvCryptoName);
+            holder.tvCryptoAmount = convertView.findViewById(R.id.tvCryptoAmount);
+            holder.tvCryptoValue = convertView.findViewById(R.id.tvCryptoValue);
+
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         PortfolioItem item = portfolioItems.get(position);
-
-        TextView tvName = convertView.findViewById(R.id.tvCryptoName);
-        TextView tvAmount = convertView.findViewById(R.id.tvCryptoAmount);
-        TextView tvValue = convertView.findViewById(R.id.tvCryptoValue);
 
         // Construir el nombre completo con el símbolo si está disponible
         String fullName = item.getCryptoName();
@@ -55,10 +64,18 @@ public class PortfolioAdapter extends BaseAdapter {
             fullName += " (" + item.getCryptoSymbol() + ")";
         }
 
-        tvName.setText(fullName);
-        tvAmount.setText(String.format("Cantidad: %.6f", item.getCryptoAmount()));
-        tvValue.setText(String.format("Valor: $%.2f", item.getTotalValue()));
+        holder.tvCryptoName.setText(fullName);
+        holder.tvCryptoAmount.setText(String.format("Cantidad: %.6f", item.getCryptoAmount()));
+        holder.tvCryptoValue.setText(String.format("Valor: $%.2f", item.getTotalValue()));
 
         return convertView;
+    }
+
+    // ViewHolder pattern para mejor rendimiento
+    private static class ViewHolder {
+        ImageView ivCryptoLogo;
+        TextView tvCryptoName;
+        TextView tvCryptoAmount;
+        TextView tvCryptoValue;
     }
 }

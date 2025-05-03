@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">cryptocurrency</string>
+    
+    <!-- Login Activity -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="register_button">Registrarse</string>
+    <string name="welcome_message">Bienvenido a tu portal de criptomonedas</string>
+    <string name="app_description">Gestiona tus inversiones en crypto de forma sencilla</string>
+    
+    <!-- Register Activity -->
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="register_action">Registrar</string>
+    <string name="back_to_login">Volver al Login</string>
+    
+    <!-- Dashboard Activity -->
+    <string name="loading_prices">Cargando precios...</string>
+    <string name="logout_button">Cerrar sesión</string>
+    <string name="view_portfolio">Ver Portafolio</string>
+    <string name="crypto_market">Mercado Crypto</string>
+    <string name="my_portfolio">Mi Portafolio</string>
+    
+    <!-- Portfolio Activity -->
+    <string name="total_value">Total en dólares: $0.00</string>
+    <string name="add_crypto">Agregar Criptomoneda</string>
+    <string name="portfolio_empty">Tu portafolio está vacío. ¡Añade tu primera criptomoneda!</string>
+    <string name="portfolio_title">Mi Portafolio de Inversiones</string>
+    
+    <!-- Item Crypto -->
+    <string name="bitcoin">Bitcoin</string>
+    <string name="btc">BTC</string>
+    <string name="price_example">$45,000.00</string>
+    <string name="market_cap">Cap. de mercado: </string>
+    <string name="hour_change">24h: </string>
+    
+    <!-- Item Portfolio -->
+    <string name="crypto_amount">Cantidad: 0.5</string>
+    <string name="crypto_value">Valor: $25000</string>
+    <string name="purchase_price">Precio de compra: </string>
+    <string name="current_value">Valor actual: </string>
+    <string name="profit_loss">Ganancia/Pérdida: </string>
+    
+    <!-- Dialog Add Crypto -->
+    <string name="no_crypto_selected">Ninguna criptomoneda seleccionada</string>
+    <string name="select_crypto_button">Seleccionar Criptomoneda</string>
+    <string name="current_price_label">Precio actual:</string>
+    <string name="current_price">$0.00</string>
+    <string name="amount_hint">Cantidad (ej: 0.5)</string>
+    <string name="add_to_portfolio">Añadir a mi portafolio</string>
+    
+    <!-- Dialog Select Crypto -->
+    <string name="select_crypto_title">Selecciona una criptomoneda</string>
+    <string name="search_hint">Buscar criptomoneda...</string>
 </resources>

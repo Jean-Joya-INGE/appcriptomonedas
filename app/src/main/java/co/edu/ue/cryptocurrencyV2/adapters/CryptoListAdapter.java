@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -45,20 +46,37 @@ public class CryptoListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_crypto, parent, false);
+
+            holder = new ViewHolder();
+            holder.ivCryptoLogo = convertView.findViewById(R.id.ivCryptoLogo);
+            holder.tvCryptoName = convertView.findViewById(R.id.tvCryptoName);
+            holder.tvCryptoSymbol = convertView.findViewById(R.id.tvCryptoSymbol);
+            holder.tvCryptoPrice = convertView.findViewById(R.id.tvCryptoPrice);
+
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
         CryptoCurrency crypto = getItem(position);
 
-        TextView tvCryptoName = convertView.findViewById(R.id.tvCryptoName);
-        TextView tvCryptoSymbol = convertView.findViewById(R.id.tvCryptoSymbol);
-        TextView tvCryptoPrice = convertView.findViewById(R.id.tvCryptoPrice);
-
-        tvCryptoName.setText(crypto.getName());
-        tvCryptoSymbol.setText(crypto.getSymbol());
-        tvCryptoPrice.setText(String.format("$%.2f", crypto.getCurrentPrice()));
+        // Configurar los textos básicos
+        holder.tvCryptoName.setText(crypto.getName());
+        holder.tvCryptoSymbol.setText(crypto.getSymbol());
+        holder.tvCryptoPrice.setText(String.format("$%.2f", crypto.getCurrentPrice()));
 
         return convertView;
+    }
+
+    // ViewHolder pattern para mejor rendimiento
+    private static class ViewHolder {
+        ImageView ivCryptoLogo;
+        TextView tvCryptoName;
+        TextView tvCryptoSymbol;
+        TextView tvCryptoPrice;
     }
 }

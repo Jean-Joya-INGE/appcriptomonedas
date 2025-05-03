@@ -1,37 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="12dp">
+    android:layout_margin="6dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@drawable/card_background">
 
+        <!-- Icono de criptomoneda -->
+        <ImageView
+            android:id="@+id/ivCryptoLogo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/crypto_icon_generic"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="Logo de criptomoneda"/>
+
+        <!-- Información principal de la criptomoneda -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvCryptoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bitcoin"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1F4F8B" />
+
+            <TextView
+                android:id="@+id/tvCryptoSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btc"
+                android:textSize="14sp"
+                android:textColor="#78909C" />
+        </LinearLayout>
+
+        <!-- Precio -->
         <TextView
-            android:id="@+id/tvCryptoName"
+            android:id="@+id/tvCryptoPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bitcoin"
+            android:text="@string/price_example"
             android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvCryptoSymbol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BTC"
-            android:textSize="14sp" />
+            android:textColor="#1F4F8B"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvCryptoPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$45,000.00"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-</LinearLayout> 
+</androidx.cardview.widget.CardView> 

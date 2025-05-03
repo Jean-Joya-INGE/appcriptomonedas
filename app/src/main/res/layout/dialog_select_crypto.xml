@@ -7,16 +7,30 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Selecciona una criptomoneda"
+        android:text="@string/select_crypto_title"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="#3366CC"
         android:gravity="center"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:background="#F5F5F5"/>
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_hint"
+        android:padding="12dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/card_background"
+        android:drawableStart="@drawable/crypto_logo"
+        android:drawablePadding="8dp"/>
 
     <ListView
         android:id="@+id/lvCryptoList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/darker_gray"
-        android:dividerHeight="0.5dp"/>
+        android:dividerHeight="0.5dp"
+        android:layout_margin="8dp"/>
 </LinearLayout> 

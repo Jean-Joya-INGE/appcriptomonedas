@@ -10,11 +10,12 @@ public class PortfolioItem {
     private double currentPrice; // Precio actual
     private double totalValue; // Valor total (cantidad * precio actual)
     private String purchaseDate; // Fecha de compra
+    private String imageUrl; // URL de la imagen/logo
 
     // Constructor completo
     public PortfolioItem(int id, String cryptoId, String cryptoName, String cryptoSymbol,
             double cryptoAmount, double cryptoPrice, double currentPrice,
-            double totalValue, String purchaseDate) {
+            double totalValue, String purchaseDate, String imageUrl) {
         this.id = id;
         this.cryptoId = cryptoId;
         this.cryptoName = cryptoName;
@@ -24,6 +25,15 @@ public class PortfolioItem {
         this.currentPrice = currentPrice;
         this.totalValue = totalValue;
         this.purchaseDate = purchaseDate;
+        this.imageUrl = imageUrl;
+    }
+
+    // Constructor completo sin imagen (compatible con código existente)
+    public PortfolioItem(int id, String cryptoId, String cryptoName, String cryptoSymbol,
+            double cryptoAmount, double cryptoPrice, double currentPrice,
+            double totalValue, String purchaseDate) {
+        this(id, cryptoId, cryptoName, cryptoSymbol, cryptoAmount, cryptoPrice,
+                currentPrice, totalValue, purchaseDate, null);
     }
 
     // Constructor simplificado (compatible con el código existente)
@@ -32,6 +42,7 @@ public class PortfolioItem {
         this.cryptoAmount = cryptoAmount;
         this.cryptoPrice = cryptoPrice;
         this.totalValue = totalValue;
+        this.imageUrl = null;
     }
 
     // Getters
@@ -69,5 +80,13 @@ public class PortfolioItem {
 
     public String getPurchaseDate() {
         return purchaseDate;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
